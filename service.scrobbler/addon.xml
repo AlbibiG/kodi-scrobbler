@@ -1,3 +1,19 @@
-Custom TMDB Scrobbler
-    Records watched history, TMDB metadata, and remembers progress.
-    all
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="service.scrobbler.mariadb" name="MariaDB Scrobbler" version="1.0.1" provider-name="You">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="script.module.requests" version="2.22.0"/>
+  </requires>
+  
+  <!-- Runs the tracking script silently in the background -->
+  <extension point="xbmc.service" library="main.py" start="startup" />
+  
+  <!-- Allows you to click the addon in the UI to open settings -->
+  <extension point="xbmc.python.script" library="launcher.py" />
+  
+  <extension point="xbmc.addon.metadata">
+    <summary>Custom MariaDB TMDB Scrobbler</summary>
+    <description>Records watched history, TMDB metadata, and remembers progress.</description>
+    <platform>all</platform>
+  </extension>
+</addon>
